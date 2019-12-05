@@ -255,7 +255,7 @@ var Game = {
 		context.font = 'bold 50px Courier new';
 
 		// Change the canvas color;
-		context.fillStyle = '#06ba12';
+		context.fillStyle = '#ff0000';
 
 		// Draw the text
 		if (pause) {
@@ -264,7 +264,7 @@ var Game = {
 				context.fillText('P TO CONTINUE', boxX + 80, boxY + 120);
 			}
 			else {
-				context.fillStyle = '#06ba12';
+				context.fillStyle = '#ff0000';
 				context.fillText('WAITING HOST', boxX + 40, boxY + 60);
 			}
 		}
@@ -272,14 +272,14 @@ var Game = {
 
 			if (screenNumber == 1) {
 				context.fillText('Player count: ', boxX + 40, boxY) 
-				context.fillStyle = '#FFFFFF';
-				context.fillStyle = '#06ba12';
+				context.fillStyle = '#ff0000';
+				context.fillStyle = '#ff0000';
 				context.fillText(playercount, boxX + 430, boxY) 
-				context.fillStyle = '#06ba12';
+				context.fillStyle = '#ff0000';
 				context.fillText('SPACE TO START', boxX + 40, boxY + 60);
 			}
 			else {
-				context.fillStyle = '#06ba12';
+				context.fillStyle = '#ff0000';
 				context.fillText('WAITING HOST', boxX + 40, boxY + 60);
 			}
 		}
@@ -435,33 +435,33 @@ var Game = {
 		context.clearRect(0, 0, canvas.width, canvas.height);
 
 		//draw background
-		context.fillStyle = '#000000';
+		context.fillStyle = '#ff0000';
 		context.fillRect(0, 0, canvas.width, canvas.height);
 
 		//set the color of the fillStyle to white
-		context.fillStyle = '#FFFFFF';
+		context.fillStyle = '#ff0000';
 
 		this.players.forEach(function (playerAt) {
 			if (playerAt.id % 2 != 0) {
 				if (screenNumber == 1) {
 					if (playerAt.id == 1)
-						context.fillStyle = '#FFFFFF';
+						context.fillStyle = '#ff0000';
 					else
-						context.fillStyle = '#06ba12';
+						context.fillStyle = '#ff0000';
 					context.fillRect(playerAt.x, playerAt.y, playerAt.width, playerAt.height);
 				}
 			}
 			else {
 				if (playerAt.id == 2)
-					context.fillStyle = '#FFFFFF';
+					context.fillStyle = '#ff0000';
 				else
-					context.fillStyle = '#06ba12';
+					context.fillStyle = '#ff0000';
 				context.fillRect(playerAt.x, playerAt.y, playerAt.width, playerAt.height);
 			}
 		});
 
 		//draw the ball
-		context.fillStyle = '#FFFFFF';
+		context.fillStyle = '#ff0000';
 		if (screenNumber == 1) {
 			context.fillRect(this.ball.x, this.ball.y, this.ball.width, this.ball.height)
 		} else {
@@ -470,7 +470,7 @@ var Game = {
 
 		//draw the line
 		linePos = (maxRes / 2 - (screenRes * (screenNumber - 1)))
-		context.fillStyle = '#FFFFFF';
+		context.fillStyle = '#ff0000';
 
 		for (var i = 0; i < canvas.height; i += 50) {
 
@@ -487,7 +487,7 @@ var Game = {
 		if (showFPS) {
 			// Change the canvas font size and color
 			context.font = 'bold 12px Courier new';
-			context.fillStyle = '#06ba12';
+			context.fillStyle = '#ff0000';
 
 			context.fillText('FPS: ' + 1 / ((performance.now() - fpsAnterior) / 1000), 10, 20);
 
